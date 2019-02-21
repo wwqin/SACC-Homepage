@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0">
+    <title>南邮计软网安院科协</title>
+    <link rel="stylesheet" href="lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href='http://fonts.font.im/css?family=Poiret+One&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:200' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/model.css">
+    <link rel="stylesheet" type="text/css" href="css/mobileModel.css">
+    <link rel="shortcut icon" href="images/logo/logo_副本.png">
+    <link rel="apple-touch-icon" href="images/logo/logo_副本4.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/logo/logo_副本2.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/logo/logo_副本3.png">
+    <!--[if lt IE 9]>
+    <script src="lib/html5shiv.min.js"></script>
+    <script src="lib/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="loading"></div>
+<div class="loading-text">Welcome to <span style="color: yellow">SACC</span></div>
+<div class="loading-bar"></div>
+<canvas id="canvas" width="1900" height="900" style="position: absolute;"></canvas>
+<div class="container">
+    <div class="row">
+        <div class="sacc-wrapper">
+            <div class="contact-us">
+                <ul class="contact-us-icon-list">
+                    <li><span></span><i class="fa fa-qq"><a href="https://jq.qq.com/?_wv=1027&k=5144GCF"></a></i></li>
+                    <li><span></span><i class="fa fa-wechat"><a href=""></a></i></li>
+                    <li><span></span><i class="fa fa-github"><a href=""></a></i></li>
+                </ul>
+            </div>
+            <header class="sacc-header"></header>
+            <div class="header-content clearfix">
+                <div class="sacc-leftPart">
+                    <h1><span>s</span><span>acc</span></h1>
+                </div>
+                <div class="sacc-rightPart">
+                    <ul class="sacc-nav">
+                        <li id="sacc-jump-home"><a class="intro-title" href="javascript:void(0);">Home</a></li>
+                        <li id="sacc-jump-dt"><a class="intro-title" href="javascript:void(0);">Departments</a></li>
+                        <li id="sacc-jump-team"><a class="intro-title" href="javascript:void(0);">Team</a></li>
+                        <li><a href="http://join.njupt-sacc.com/">JoinUs</a></li>
+                    </ul>
+                </div>
+                <!--移动端显示-->
+                <div class="right-mobile">
+                    <div class="right-mobile-part">
+                        <span class="mobile-toggle-icon"></span>
+                        <span class="mobile-toggle-icon"></span>
+                        <span class="mobile-toggle-icon"></span>
+                        <span class="mobile-toggle-icon"></span>
+                    </div>
+                    <div class="right-mobile-content">
+                        <ul class="mobile-sacc-nav">
+                            <li id="sacc-jump-moble-home"><a class="intro-title" href="javascript:void(0);">Home</a></li>
+                            <li id="sacc-jump-moble-dt"><a class="intro-title" href="javascript:void(0);">Departments</a></li>
+                            <li id="sacc-jump-moble-team"><a class="intro-title" href="javascript:void(0);">Team</a></li>
+                            <li><a href="http://join.njupt-sacc.com/">Join Us</a></li>
+                        </ul>
+                        <ul class="mobile-contact-us-icon-list">
+                            <li><i class="fa fa-qq"><a href="https://jq.qq.com/?_wv=1027&k=5144GCF"></a></i></li>
+                            <li><i class="fa fa-wechat"><a href=""></a></i></li>
+                            <li><i class="fa fa-github"><a href=""></a></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="sacc-container">
+                <div id="sacc-site-main-section-first" class="sacc-site-main">
+                    <div class="sacc-site-main-bg1">
+                        <div class="sacc-site-title">
+                            <p>Hey!!!</p><span></span><br>
+                            <p>Welcome to SACC~</p><span></span><br>
+                            <p>拯救世界,没有BUG</p><span></span>
+                            <a href="javascript:void(0);" id="sacc-jump-contact">Contact us</a>
+                        </div>
+                        <div id="txtsBox"></div><div id="progressBox" style="border-color: black"></div>
+                        <div class="sacc-icon-container">
+                            <img src="./images/java.png" id="sacc-icon-java">
+                            <img src="./images/py.png" id="sacc-icon-py">
+                            <img src="./images/html5.png" id="sacc-icon-h5">
+                            <img src="./images/jQuery.png" id="sacc-icon-jq">
+                            <img src="./images/android.png" id="sacc-icon-ad">
+                            <img src="./images/logo/科协logo_01.png" id="sacc-icon-logo">
+                        </div>
+                        <div class="arrow" onclick="jump()"><i class="fa fa-chevron-down"></i></div>
+                    </div>
+                </div>
+                <div id="sacc-site-main-section-second" class="sacc-site-main">
+                    <div class="inText" style="">
+                        <div id="container">
+                            <div id="window">
+                                <div id="handle">
+                                    <div id="buttons">
+                                        <button id="close">
+                                        </button>
+                                        <button id="minimize">
+                                        </button>
+                                        <button id="maximize">
+                                        </button>
+                                    </div>
+                                    <span id="title"></span>
+                                </div>
+                                <div id="console"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--部门介绍-->
+                <div id="sacc-site-main-section-third" class="sacc-site-main department-intro"></div>
+                <div id="sacc-site-main-section-fourth" class="sacc-site-main tech-team"></div>
+                <div class="logo-part">
+                    <div class="sacc-ministers-header">
+                        <img src="images/logo/科协logo_01.png"/>
+                    </div>
+                </div>
+                <!--历任主席团介绍-->
+                <div id="sacc-site-main-section-fifth" class="sacc-site-main">
+                    <header class="our-team">
+                        <h1>Our Team</h1>
+                        <p>--former and present</p>
+                    </header>
+                    <div class="sacc-introduce">
+                        <div >
+                            <div class="sacc-introduce-img">
+                                <img src="./images/ministers/head_zj.jpg">
+                            </div>
+                            <div class="sacc-introduce-text">
+                                <h1>张嘉</h1>
+                                <h2 style="margin-top: 10px;">JAVA后端</h2>
+                                <p style="margin-top: 20px;font-family: '等线 Light';font-size: 150%">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
+                                <div class="border-top"></div>
+                                <div class="border-bottom"></div>
+                                <div class="sacc-introduce-close">
+                                    <i class="fa fa-close fa-3x"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <section class="sacc-pc sacc-chairmen hidden-xs">
+                        <span class="move-left"><i class="fa fa-angle-left"></i></span>
+                        <div class="sacc-chairmen-intro">
+                            <div class="chairmen-title">
+                                <h1 class="selected">16届主席团</h1>
+                                <h1>15届主席团</h1>
+                                <h1>14届主席团</h1>
+                            </div>
+                            <div class="chairmen-content">
+                                <ul class="chairmen_16 clearfix">
+                                    <li class="col-lg-3">
+                                        <div class="chairmen-imageBox" >
+                                            <img src="images/ministers/head_zj.jpg" height="640" width="640"/>
+                                        </div>
+                                        <div class="chairmen-disc">
+                                            <div class="disc-left">
+                                                <h1>张嘉</h1>
+                                            </div>
+                                            <div class="disc-right">
+                                                <span onclick="clickShow(0)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="col-lg-3">
+                                        <div class="chairmen-imageBox">
+                                            <img src="images/ministers/head_ck.jpg" height="640" width="640"/>
+                                        </div>
+                                        <div class="chairmen-disc">
+                                            <div class="disc-left">
+                                                <h1>陈坤</h1>
+                                            </div>
+                                            <div class="disc-right">
+                                                <span onclick="clickShow(1)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="col-lg-3">
+                                        <div class="chairmen-imageBox">
+                                            <img src="images/ministers/head_gym.jpg" height="640" width="640"/>
+                                        </div>
+                                        <div class="chairmen-disc">
+                                            <div class="disc-left">
+                                                <h1>郭亚旻</h1>
+                                            </div>
+                                            <div class="disc-right">
+                                                <span onclick="clickShow(2)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="col-lg-3">
+                                        <div class="chairmen-imageBox">
+                                            <img src="images/ministers/head_gy.jpg" height="640" width="640"/>
+                                        </div>
+                                        <div class="chairmen-disc">
+                                            <div class="disc-left">
+                                                <h1>高宇</h1>
+                                            </div>
+                                            <div class="disc-right">
+                                                <span onclick="clickShow(3)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="col-lg-3">
+                                        <div class="chairmen-imageBox">
+                                            <img src="images/ministers/head_lzh.jpg" height="640" width="640"/>
+                                        </div>
+                                        <div class="chairmen-disc">
+                                            <div class="disc-left">
+                                                <h1>雷镇豪</h1>
+                                            </div>
+                                            <div class="disc-right">
+                                                <span onclick="clickShow(4)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="chairmen chairmen_15 clearfix">
+                                    <li class="col-lg-4">
+                                        <div class="chairmen-imageBox">
+                                            <img src="images/ministers/head_wyh.jpg" height="624" width="624"/>
+                                        </div>
+                                        <div class="chairmen-disc">
+                                            <div class="disc-left">
+                                                <h1>王玉函</h1>
+                                            </div>
+                                            <div class="disc-right">
+                                                <span  onclick="clickShow(5)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="col-lg-4">
+                                        <div class="chairmen-imageBox">
+                                            <img src="images/ministers/head_why.jpg" height="640" width="640"/>
+                                        </div>
+                                        <div class="chairmen-disc">
+                                            <div class="disc-left">
+                                                <h1>王化益</h1>
+                                            </div>
+                                            <div class="disc-right">
+                                                <span  onclick="clickShow(6)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="col-lg-4">
+                                        <div class="chairmen-imageBox">
+                                            <img src="images/ministers/head_dt.jpg" height="640" width="640"/>
+                                        </div>
+                                        <div class="chairmen-disc">
+                                            <div class="disc-left">
+                                                <h1>刁太</h1>
+                                            </div>
+                                            <div class="disc-right">
+                                                <span  onclick="clickShow(7)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="col-lg-4">
+                                        <div class="chairmen-imageBox">
+                                            <img src="images/ministers/head_cwq.jpg" height="406" width="406"/>
+                                        </div>
+                                        <div class="chairmen-disc">
+                                            <div class="disc-left">
+                                                <h1>陈维清</h1>
+                                            </div>
+                                            <div class="disc-right">
+                                                <span  onclick="clickShow(8)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="chairmen_14 clearfix" class="fa fa-plus">
+                                    <li class="col-lg-3">
+                                        <div class="chairmen-imageBox">
+                                            <img src="images/ministers/head_nxy.jpg" height="480" width="480"/>
+                                        </div>
+                                        <div class="chairmen-disc">
+                                            <div class="disc-left">
+                                                <h1>牛夕源</h1>
+                                            </div>
+                                            <div class="disc-right">
+                                                <span  onclick="clickShow(9)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="col-lg-3">
+                                        <div class="chairmen-imageBox">
+                                            <img src="images/ministers/head_wd.jpg" height="640" width="639"/>
+                                        </div>
+                                        <div class="chairmen-disc">
+                                            <div class="disc-left">
+                                                <h1>王丹</h1>
+                                            </div>
+                                            <div class="disc-right">
+                                                <span  onclick="clickShow(10)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="col-lg-3">
+                                        <div class="chairmen-imageBox">
+                                            <img src="images/ministers/head_fl.jpg" height="640" width="640"/>
+                                        </div>
+                                        <div class="chairmen-disc">
+                                            <div class="disc-left">
+                                                <h1>范莉</h1>
+                                            </div>
+                                            <div class="disc-right">
+                                                <span  onclick="clickShow(11)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="col-lg-3">
+                                        <div class="chairmen-imageBox">
+                                            <img src="images/ministers/head_wjh.jpg" height="640" width="640"/>
+                                        </div>
+                                        <div class="chairmen-disc">
+                                            <div class="disc-left">
+                                                <h1>王家豪</h1>
+                                            </div>
+                                            <div class="disc-right">
+                                                <span  onclick="clickShow(12)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="col-lg-3">
+                                        <div class="chairmen-imageBox">
+                                            <img src="images/ministers/head_lyy.jpg" height="207" width="208"/>
+                                        </div>
+                                        <div class="chairmen-disc">
+                                            <div class="disc-left">
+                                                <h1>梁羽燕</h1>
+                                            </div>
+                                            <div class="disc-right">
+                                                <span  onclick="clickShow(13)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <span class="move-right"><i class="fa fa-angle-right"></i></span>
+                    </section>
+                    <section class="sacc-mobile sacc-chairmen mobile-sacc-chairmen hidden-lg hidden-md">
+                        <div class="sacc-chairmen-intro">
+                            <div class="chairmen-content">
+                                <div class="mobile-chairmen-content">
+                                    <h1 class="selected">16届主席团</h1>
+                                    <ul class="chairmen_16 clearfix">
+                                        <li>
+                                            <div class="chairmen-imageBox" >
+                                                <img src="images/ministers/head_zj.jpg" height="640" width="640"/>
+                                            </div>
+                                            <div class="chairmen-disc">
+                                                <div class="disc-left">
+                                                    <h1>张嘉</h1>
+                                                </div>
+                                                <div class="disc-right">
+                                                <span onclick="clickShow(0)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="chairmen-imageBox">
+                                                <img src="images/ministers/head_ck.jpg" height="640" width="640"/>
+                                            </div>
+                                            <div class="chairmen-disc">
+                                                <div class="disc-left">
+                                                    <h1>陈坤</h1>
+                                                </div>
+                                                <div class="disc-right">
+                                                <span onclick="clickShow(1)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="chairmen-imageBox">
+                                                <img src="images/ministers/head_gym.jpg" height="640" width="640"/>
+                                            </div>
+                                            <div class="chairmen-disc">
+                                                <div class="disc-left">
+                                                    <h1>郭亚旻</h1>
+                                                </div>
+                                                <div class="disc-right">
+                                                <span onclick="clickShow(2)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="chairmen-imageBox">
+                                                <img src="images/ministers/head_gy.jpg" height="640" width="640"/>
+                                            </div>
+                                            <div class="chairmen-disc">
+                                                <div class="disc-left">
+                                                    <h1>高宇</h1>
+                                                </div>
+                                                <div class="disc-right">
+                                                <span onclick="clickShow(3)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="chairmen-imageBox">
+                                                <img src="images/ministers/head_lzh.jpg" height="640" width="640"/>
+                                            </div>
+                                            <div class="chairmen-disc">
+                                                <div class="disc-left">
+                                                    <h1>雷镇豪</h1>
+                                                </div>
+                                                <div class="disc-right">
+                                                <span onclick="clickShow(4)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mobile-chairmen-content">
+                                    <h1>15届主席团</h1>
+                                    <ul class="chairmen chairmen_15 clearfix">
+                                        <li>
+                                            <div class="chairmen-imageBox">
+                                                <img src="images/ministers/head_wyh.jpg" height="624" width="624"/>
+                                            </div>
+                                            <div class="chairmen-disc">
+                                                <div class="disc-left">
+                                                    <h1>王玉函</h1>
+                                                </div>
+                                                <div class="disc-right">
+                                                    <span  onclick="clickShow(5)">
+                                                        <i class="fa fa-plus"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="chairmen-imageBox">
+                                                <img src="images/ministers/head_why.jpg" height="640" width="640"/>
+                                            </div>
+                                            <div class="chairmen-disc">
+                                                <div class="disc-left">
+                                                    <h1>王化益</h1>
+                                                </div>
+                                                <div class="disc-right">
+                                                <span  onclick="clickShow(6)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="chairmen-imageBox">
+                                                <img src="images/ministers/head_dt.jpg" height="640" width="640"/>
+                                            </div>
+                                            <div class="chairmen-disc">
+                                                <div class="disc-left">
+                                                    <h1>刁太</h1>
+                                                </div>
+                                                <div class="disc-right">
+                                                <span  onclick="clickShow(7)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="chairmen-imageBox">
+                                                <img src="images/ministers/head_cwq.jpg" height="406" width="406"/>
+                                            </div>
+                                            <div class="chairmen-disc">
+                                                <div class="disc-left">
+                                                    <h1>陈维清</h1>
+                                                </div>
+                                                <div class="disc-right">
+                                                <span  onclick="clickShow(8)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mobile-chairmen-content">
+                                    <h1>14届主席团</h1>
+                                    <ul class="chairmen_14 clearfix" class="fa fa-plus">
+                                        <li>
+                                            <div class="chairmen-imageBox">
+                                                <img src="images/ministers/head_nxy.jpg" height="480" width="480"/>
+                                            </div>
+                                            <div class="chairmen-disc">
+                                                <div class="disc-left">
+                                                    <h1>牛夕源</h1>
+                                                </div>
+                                                <div class="disc-right">
+                                                <span  onclick="clickShow(9)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="chairmen-imageBox">
+                                                <img src="images/ministers/head_wd.jpg" height="640" width="639"/>
+                                            </div>
+                                            <div class="chairmen-disc">
+                                                <div class="disc-left">
+                                                    <h1>王丹</h1>
+                                                </div>
+                                                <div class="disc-right">
+                                                <span  onclick="clickShow(10)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="chairmen-imageBox">
+                                                <img src="images/ministers/head_fl.jpg" height="640" width="640"/>
+                                            </div>
+                                            <div class="chairmen-disc">
+                                                <div class="disc-left">
+                                                    <h1>范莉</h1>
+                                                </div>
+                                                <div class="disc-right">
+                                                <span  onclick="clickShow(11)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="chairmen-imageBox">
+                                                <img src="images/ministers/head_wjh.jpg" height="640" width="640"/>
+                                            </div>
+                                            <div class="chairmen-disc">
+                                                <div class="disc-left">
+                                                    <h1>王家豪</h1>
+                                                </div>
+                                                <div class="disc-right">
+                                                <span  onclick="clickShow(12)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="chairmen-imageBox">
+                                                <img src="images/ministers/head_lyy.jpg" height="207" width="208"/>
+                                            </div>
+                                            <div class="chairmen-disc">
+                                                <div class="disc-left">
+                                                    <h1>梁羽燕</h1>
+                                                </div>
+                                                <div class="disc-right">
+                                                <span  onclick="clickShow(13)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="sacc-contact">
+                        <span id="contact-text"><i class="show-mobile"></i>SO, WHAT ARE YOU WAITING FOR ?<i></i></span>
+                        <div class="contact-us-button">
+                            <button><a href="mailto:njupt.sacc@outlook.com">Contact us</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="sacc-footer">
+                <div class="footer-container">
+                    <img src="./images/chat1.jpg">
+                    <div class="footer-images">
+                        <div class="footer-images-box-parent">
+                            <div class="footer-images-box">
+                                <ul class="footer-images-box-ul clearfix">
+                                    <li class="col-lg-3"><img src="./images/logo/S.png"></li>
+                                    <li class="col-lg-3"><img src="./images/logo/A.png"></li>
+                                    <li class="col-lg-3"><img src="./images/logo/C1.png"></li>
+                                    <li class="col-lg-3"><img src="./images/logo/C2.png"></li>
+                                </ul>
+                            </div>
+                            <img src="./images/chat1.jpg" class="img-show-mobile">
+                            <div class="footer-icons">
+                                <div>
+                                    <a href="https://jq.qq.com/?_wv=1027&k=5Ijl448"><i class="fa fa-qq"></i><p> 3159742702</p></a>
+                                </div>
+                                <div>
+                                    <a href="mailto:mailto:njupt.sacc@outlook.com"><i class="fa fa-envelope"></i><p> njupt.sacc@outlook.com</p></a>
+                                </div>
+                                <div>
+                                    <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzI5NjY5ODE0Nw==&scene=124#wechat_redirect"><i class="fa fa-wechat" style="width: 14px;"></i><p> 南邮计软网安院科协</p></a>
+                                </div>
+                                <div>
+                                    <a href="https://github.com/NJUPT-SACC"><i class="fa fa-github" style="width: 14px;"></i><p> NJUPT-SACC</p></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-text">
+                            Copyright © 2018 Sacc. All Rights Reserved.
+                        </div>
+                    </div>
+                    <img src="./images/chat.png">
+                </div>
+            </footer>
+        </div>
+    </div>
+</div>
+<script src="lib/jquery-3.3.1.min.js"></script>
+<script src="lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./js/canvas.js"></script>
+<script type="text/javascript" src="./js/index.js"></script>
+<script src="js/mobile-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,488 @@
+/*移动端布局     媒体查询*/
+@media screen and (max-width: 768px) {
+    body,html{
+        width: 100vw;
+    }
+    canvas{
+        display: none;
+    }
+    .sacc-wrapper .contact-us{
+        display: none;
+    }
+    /*顶部导航栏*/
+    .sacc-wrapper .sacc-header{
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+        transform: translateY(0);
+    }
+    .header-content{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        flex-wrap: wrap;
+    }
+    .header-content .right-mobile{
+        display: block;
+    }
+    .header-content .sacc-leftPart{
+        margin-left: 5%;
+        width: 70%;
+        float: none;
+    }
+    .header-content .sacc-leftPart h1{
+        font-size: 10vw;
+        letter-spacing: 6px;
+        text-align: left;
+        margin-left: 5%;
+        line-height: 70px;
+        z-index: 9999999;
+        position: absolute;
+    }
+    .titleShow{
+        -webkit-animation: 1s titleShow ease-in-out;
+        -o-animation: 1s titleShow ease-in-out;
+        animation: 1s titleShow ease-in-out;
+        animation-fill-mode: forwards;
+        -webkit-animation-fill-mode: forwards;
+    }
+    .titleHidden{
+        -webkit-animation: 1s titleHidden ease-in-out;
+        -o-animation: 1s titleHidden ease-in-out;
+        animation: 1s titleHidden ease-in-out;
+        animation-fill-mode: forwards;
+        -webkit-animation-fill-mode: forwards;
+    }
+    @keyframes titleShow {
+        0%{opacity: 1}
+        40%{opacity: 0}
+        100%{opacity: 1;}
+    }
+    @-webkit-keyframes titleShow {
+        0%{opacity: 1}
+        40%{opacity: 0}
+        100%{opacity: 1;}
+    }
+    @-moz-keyframes titleShow {
+        0%{opacity: 1}
+        40%{opacity: 0}
+        100%{opacity: 1;}
+    }
+    @keyframes titleHidden {
+        0%{opacity: 1}
+        40%{opacity: 0}
+        100%{opacity: 1;}
+    }
+    @-webkit-keyframes titleHidden {
+        0%{opacity: 1}
+        40%{opacity: 0}
+        100%{opacity: 1;}
+    }
+    @-moz-keyframes titleHidden {
+        0%{opacity: 1}
+        40%{opacity: 0}
+        100%{opacity: 1;}
+    }
+    .header-content .sacc-leftPart h1 span:nth-of-type(2){
+        color: #ffffff;
+    }
+    .header-content .sacc-rightPart{
+        display: none;
+    }
+    .header-content .right-mobile-part{
+        display: inline-block;
+        position: absolute;
+        right: 15px;
+        top: 19px;
+        z-index: 9999999999999;
+    }
+    .header-content .right-mobile-part span{
+        display: block;
+        margin: 5px 0;
+        width: 30px;
+        height: 4px;
+        background-color: #f7db61;
+        border-radius: 2px;
+        -webkit-transition: all .5s ease-in-out;
+        -moz-transition: all .5s ease-in-out;
+        -ms-transition: all .5s ease-in-out;
+        -o-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+    }
+    .spanRotate1{
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+    .spanRotate2{
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+    .header-content .right-mobile-part span:last-of-type{
+        position: absolute;
+        top: 8px;
+        height: 4px;
+    }
+    .header-content .right-mobile .right-mobile-content{
+        height: 100vh;
+        width: 100%;
+        background-color: rgba(0,0,0,.93);
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translateY(-100%);
+        z-index: 9998;
+        -webkit-transition: all .8s ease-in-out;
+        -moz-transition: all .8s ease-in-out;
+        -ms-transition: all .8s ease-in-out;
+        -o-transition: all .8s ease-in-out;
+        transition: all .8s ease-in-out;
+    }
+    .header-content .right-mobile .right-mobile-content .mobile-sacc-nav{
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .header-content .right-mobile .right-mobile-content .mobile-sacc-nav li{
+        overflow: hidden;
+        margin: 8px 0;
+    }
+    .header-content .right-mobile .right-mobile-content .mobile-sacc-nav li a{
+        color: #f7db61;
+        font-family: 'Varela Round',cursive;
+        font-size: 10vw;
+        font-weight: 900;
+    }
+    .header-content .right-mobile .right-mobile-content .mobile-contact-us-icon-list{
+        width: 100%;
+        position: absolute;
+        bottom: 5%;
+        display: flex;
+        justify-content: center;
+    }
+    .header-content .right-mobile .right-mobile-content .mobile-contact-us-icon-list li{
+        width: 33.3333333%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+    }
+    .header-content .right-mobile .right-mobile-content .mobile-contact-us-icon-list li i{
+        color: #f7db61;
+        font-size: 8.5vw;
+    }
+    .header-content .right-mobile .right-mobile-content .mobile-contact-us-icon-list li i a{
+        display: block;
+        width: 8.5vw;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        z-index: 2;
+    }
+
+    /*第一屏的内容*/
+    #sacc-site-main-section-first .sacc-site-main-bg1 .sacc-site-title {
+        font-size: 8vw;
+        left: 0;
+        padding-left: 10%;
+        width: 100%;
+    }
+    #sacc-site-main-section-first .sacc-site-main-bg1 .sacc-site-title p{
+        position: absolute;
+        word-break: keep-all;
+        white-space:nowrap;
+        z-index: 1;
+    }
+    #sacc-site-main-section-first .sacc-site-main-bg1 .sacc-site-title p:after{
+        display: none;
+    }
+    #sacc-site-main-section-first .sacc-site-main-bg1 .sacc-site-title span{
+        display: block;
+        width: 100%;
+        background-color: #f7db61;
+        height: 14px;
+        position: absolute;
+        z-index: 0;
+        transform: translateY(140%);
+    }
+    #sacc-site-main-section-first .sacc-site-main-bg1 .sacc-site-title a{
+        line-height: 39px;
+        margin-top: 72px;
+        width: 120px;
+        height: 40px;
+        color: #000;
+    }
+    #sacc-site-main-section-first .sacc-site-main-bg1 .sacc-icon-container{
+        display: none;
+    }
+    .arrow {
+        width: 16vw;
+        height: 16vw;
+        line-height: 15vw;
+        font-size: 7vw;
+        border: 2px solid rgba(0,0,0,.64);
+        color: rgba(0,0,0,.64);
+    }
+
+    /*第二屏的内容*/
+    #sacc-site-main-section-second{
+        padding: 0 5px;
+    }
+    #sacc-site-main-section-second .inText{
+        width: 100%;
+        height: 65%;
+    }
+    /*第三屏的内容*/
+    #sacc-site-main-section-third {
+        height: auto;
+    }
+    #sacc-site-main-section-third .department-intro-header h1 {
+        font-size: 12vw;
+        text-shadow: 0 1px 1px #000;
+    }
+    #sacc-site-main-section-third .department-intro-header p {
+        font-size: 6vw;
+        margin-left: 50%;
+    }
+    #sacc-site-main-section-third .department-intro-section li .sacc-logo-part > i {
+        padding: 22px;
+        font-size: 11vw;
+    }
+    #sacc-site-main-section-third .department-intro-section li .sacc-department-intro-part p {
+        font-size: 5vw;
+    }
+    #sacc-site-main-section-third .department-intro-footer {
+        text-align: center;
+        font-size: 4vw;
+    }
+    #sacc-site-main-section-third .department-intro-footer .sacc-footer-intro{
+        overflow: hidden;
+        margin: 2px 0 6px 0;
+    }
+    #sacc-site-main-section-third .department-intro-section li .sacc-logo-part > p {
+        display: none;
+    }
+    #sacc-site-main-section-third .department-intro-header h1{
+        padding: 0;
+        font-family: 'Varela Round', cursive;
+        font-weight: 900;
+        display: inline-block;
+        text-shadow: none;
+    }
+    #sacc-site-main-section-third .department-intro-header h1:before{
+        display: none;
+    }
+    #sacc-site-main-section-third .department-intro-header p{
+        font-family: 'Varela Round', cursive;
+    }
+    /*第四屏*/
+    .sacc-wrapper .sacc-container #sacc-site-main-section-fourth {
+        height: auto;
+    }
+    #sacc-site-main-section-fourth .tech-teams-header {
+        flex-wrap: wrap;
+    }
+    #sacc-site-main-section-fourth .tech-teams-header h1 {
+        font-size: 8vw;
+        white-space: nowrap;
+        line-height: 10vw;
+    }
+    #sacc-site-main-section-fourth .tech-teams-header p {
+        font-size: 18px;
+        margin-left: 22%;
+        margin-top: 3%;
+    }
+    #sacc-site-main-section-fourth .tech-teams-section .imageBox{
+        display: none;
+    }
+    #sacc-site-main-section-fourth .groups-intro{
+        width: 100%;
+    }
+    #sacc-site-main-section-fourth .groups-intro li {
+        width: 100%;
+        line-height: 2em;
+        margin-bottom: 72px;
+        overflow: hidden;
+    }
+    #sacc-site-main-section-fourth .groups-intro li span{
+        display: none;
+    }
+    #sacc-site-main-section-fourth .groups-intro li .group-intro-content {
+         margin-left: 0;
+    }
+    #sacc-site-main-section-fourth .groups-intro li .group-intro-content .group-intro-content-child {
+        display: flex;
+        justify-content: space-between;
+        vertical-align: middle;
+    }
+    #sacc-site-main-section-fourth .tech-teams-section .groups-intro li .mobile-show-icon{
+        display: inline-block;
+    }
+    #sacc-site-main-section-fourth .groups-intro li .group-intro-content h2 {
+        letter-spacing: -3px;
+    }
+    #sacc-site-main-section-fourth .groups-intro li .group-intro-content i {
+        margin-top: 5%;
+    }
+    #sacc-site-main-section-fourth .groups-intro li .group-intro-content p {
+        font-size: 4vw;
+        text-indent: 2em;
+    }
+    #sacc-site-main-section-fourth .tech-teams-section .pages {
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    #sacc-site-main-section-fourth .tech-teams-section .pages p{
+        margin: 0;
+    }
+    #sacc-site-main-section-fourth .tech-teams-section .groups-intro .sacc-python-dev h2{
+        letter-spacing: 0;
+    }
+
+    /*第五屏*/
+    #sacc-site-main-section-fifth{
+        height: 220vh;
+    }
+    #sacc-site-main-section-fifth .sacc-contact span {
+        font-size: 6.5vw;
+    }
+    #sacc-site-main-section-fifth .sacc-contact .contact-us-button button {
+        width: 44%;
+    }
+    #sacc-site-main-section-fifth .sacc-contact {
+        width: 95%;
+        height: 16%;
+    }
+    #sacc-site-main-section-fifth .sacc-contact #contact-text i.show-mobile{
+        display: block;
+        width: 76%;
+        height: 40px;
+        top: 12%;
+    }
+    #sacc-site-main-section-fifth .sacc-contact span i:nth-of-type(2) {
+        height: 45px;
+        top: 42%;
+        width: 60%;
+    }
+    .sacc-ministers-header {
+        display: none;
+    }
+    #sacc-site-main-section-fifth .our-team {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #sacc-site-main-section-fifth .our-team h1 {
+        font-size: 12vw;
+    }
+    #sacc-site-main-section-fifth .our-team p {
+        font-size: 4.5vw;
+    }
+    #sacc-site-main-section-fifth .mobile-sacc-chairmen{
+
+    }
+    .mobile-sacc-chairmen .sacc-chairmen-intro{
+
+    }
+    .mobile-sacc-chairmen .sacc-chairmen-intro .chairmen-content{
+        display: block;
+        width: auto;
+    }
+    .mobile-sacc-chairmen .sacc-chairmen-intro .chairmen-content .mobile-chairmen-content{
+        width: 100%;
+        overflow-x: hidden;
+        text-align: center;
+    }
+    .mobile-sacc-chairmen .sacc-chairmen-intro .chairmen-content .mobile-chairmen-content h1{
+        font-family: 方正姚体;
+        display: inline-block;
+        font-weight: 900;
+        text-shadow: 0 0 0.1px #000;
+    }
+    .mobile-sacc-chairmen .sacc-chairmen-intro .chairmen-content .mobile-chairmen-content ul{
+
+    }
+    #sacc-site-main-section-fifth .mobile-sacc-chairmen .sacc-chairmen-intro .chairmen-content .mobile-chairmen-content:nth-of-type(1) ul{
+        width: 500%;
+    }
+    #sacc-site-main-section-fifth .mobile-sacc-chairmen .sacc-chairmen-intro .chairmen-content .mobile-chairmen-content:nth-of-type(2) ul{
+        width: 400%;
+    }
+    #sacc-site-main-section-fifth .mobile-sacc-chairmen .sacc-chairmen-intro .chairmen-content .mobile-chairmen-content:nth-of-type(3) ul{
+        width: 500%;
+    }
+    .mobile-sacc-chairmen .sacc-chairmen-intro .chairmen-content .mobile-chairmen-content ul li{
+        float: left;
+        height: auto;
+        box-shadow: 4px 6px 8px 5px #bcc4c4;
+        background-image: url(../images/dust.png);
+        border-radius: 15px;
+
+    }
+    .mobile-sacc-chairmen .sacc-chairmen-intro .chairmen-content .mobile-chairmen-content:nth-of-type(1) ul li{
+        width: 20%;
+    }
+    .mobile-sacc-chairmen .sacc-chairmen-intro .chairmen-content .mobile-chairmen-content:nth-of-type(2) ul li{
+        width: 25%;
+    }
+    .mobile-sacc-chairmen .sacc-chairmen-intro .chairmen-content .mobile-chairmen-content:nth-of-type(3) ul li{
+        width: 20%;
+    }
+    .mobile-sacc-chairmen .sacc-chairmen-intro .chairmen-content .mobile-chairmen-content ul li .chairmen-imageBox{
+        margin-top: 17%;
+    }
+    .mobile-sacc-chairmen .sacc-chairmen-intro .chairmen-content .mobile-chairmen-content ul li .chairmen-imageBox {
+        width: 60%;
+         padding: 0 0;
+    }
+    .mobile-sacc-chairmen .sacc-chairmen-intro .chairmen-content .mobile-chairmen-content ul li .chairmen-imageBox img{
+        transition: all 1s ease-in-out;
+    }
+
+    /*footer内容*/
+    .footer-container > img {
+        display: none;
+    }
+    .footer-container .footer-images {
+        width: 80%;
+    }
+    .footer-images-box-parent .footer-images-box ul li img {
+        width: 54%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    .footer-container .footer-images .footer-images-box-parent {
+        padding-bottom: 8px;
+    }
+    .footer-container .footer-images .footer-text {
+        text-align: center;
+    }
+    .footer-images-box-ul{
+        display: none;
+    }
+    .footer-container .footer-images .footer-images-box-parent img.img-show-mobile{
+        display: block;
+        width: 32%;
+        margin-right: 5%;
+    }
+}
+@media screen and (max-width: 340px){
+    #sacc-site-main-section-fourth .groups-intro li .group-intro-content h2 {
+        font-size: 7vw;
+        margin-top: 10px;
+    }
+}
